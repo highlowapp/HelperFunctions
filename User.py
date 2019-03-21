@@ -18,9 +18,9 @@ class User:
         cursor = conn.cursor()
 
         #Select the row with the user from the database
-        user_row = cursor.execute("SELECT * FROM users WHERE uid='" + self.uid + "';")
+        cursor.execute("SELECT * FROM users WHERE uid='" + self.uid + "';")
 
-        user = user_row.fetchone()
+        user = cursor.fetchone()
 
         #Commit and close the connection
         conn.commit()
