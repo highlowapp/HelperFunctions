@@ -46,10 +46,27 @@ class User:
         conn = pymysql.connect(self.host, self.username, self.password, self.database)
         cursor = conn.cursor()
 
-        #Attempt set the column
+        #Attempt to set the column
         cursor.execute("UPDATE users SET " + column + "'" + value + "' WHERE uid='" + self.uid + "';")
 
+        #Commit and close the connection
+        conn.commit()
+        conn.close()
 
+    def setFirstname(self, value):
+        self.setColumn("firstname", value)
 
-        #Check for errors
+    def setLastname(self, value):
+        self.setColumn("lastname", value)
+
+    def setEmail(self, value):
+        self.setColumn("email", value)
+
+    def setProfileimage(self, value):
+        self.setColumn("profileimage", value)
+
+    def setPassword(self, value):
+        print("WARNING: Setting the password can be dangerous!")
+        self.setColumn("password", value)
+
         
