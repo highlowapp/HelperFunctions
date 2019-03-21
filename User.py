@@ -40,7 +40,7 @@ class User:
     ## Setters ##
 
     #Any column
-    def setColumn(self, column, value):
+    def set_column(self, column, value):
 
         #Connect to MySQL
         conn = pymysql.connect(self.host, self.username, self.password, self.database)
@@ -53,20 +53,20 @@ class User:
         conn.commit()
         conn.close()
 
-    def setFirstname(self, value):
-        self.setColumn("firstname", value)
+    def set_firstname(self, value):
+        self.set_column("firstname", value)
 
-    def setLastname(self, value):
-        self.setColumn("lastname", value)
+    def set_lastname(self, value):
+        self.set_column("lastname", value)
 
-    def setEmail(self, value):
-        self.setColumn("email", value)
+    def set_email(self, value):
+        self.set_column("email", value)
 
-    def setProfileimage(self, value):
-        self.setColumn("profileimage", value)
+    def set_profileimage(self, value):
+        self.set_column("profileimage", value)
 
-    def setPassword(self, value):
+    def set_password(self, value):
         print("WARNING: Setting the password can be dangerous!")
-        self.setColumn("password", value)
+        self.set_column("password", value)
 
         
