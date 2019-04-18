@@ -8,10 +8,5 @@ def verify_token(token):
     #Obtain the result as JSON
     result = token_verification_request.json()
 
-    #If there was an error, return the error
-    if "error" in result:
-        return '{ "error": "' + result["error"] + '" }'
-
-    else:
-        return json.dumps({'uid': result["uid"]})
+    return result
 
